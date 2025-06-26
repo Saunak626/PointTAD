@@ -10,7 +10,7 @@ import random
 import time
 from pathlib import Path
 import pandas as pd
-from ruamel import yaml
+from ruamel.yaml import YAML
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -223,7 +223,9 @@ def get_args_parser():
     return parser
 
 def get_configs(dataset):
-    default_config = yaml.load(open('datasets/dataset_cfg.yaml', 'r'), Loader=yaml.RoundTripLoader)[dataset]
+    yaml_loader = YAML(typ='rt')
+    with open('datasets/dataset_cfg.yaml', 'r') as f:
+        default_config = yaml_loader.load(f)[dataset]
     return default_config
 
 if __name__ == '__main__':

@@ -1,0 +1,10 @@
+/data
+
+*.jpg
+*.pt
+*.pth
+*.pkl
+*.pt
+*.pth
+*.pkl
+*.pyc

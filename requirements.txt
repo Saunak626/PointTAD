@@ -4,3 +4,4 @@ scipy
 pandas
 terminaltables
 ruamel-yaml
+termcolor
